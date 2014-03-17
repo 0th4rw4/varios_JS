@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<title>Ejercicio</title>
+	<link rel="stylesheet" type="text/css" media="all" href="lib/_estilos.css" />
+</head>
+
+<body>
+<section id="contenedor">
+	<h1>Carrito de Compras</h1>
+    <div id="right">
+    	Sus productos:
+        <div id="productos">ACA APARECEN LOS PRODUCTOS</div>
+    </div>
+    <input type="button" value="Leche" />
+    <input type="button" value="Pan" />
+    <input type="button" value="Azucar" />
+    <input type="button" value="Gaseosa" />
+</section>
+
+<script type="text/javascript">
+
+document.getElementById( 'productos' ).innerHTML = '' ;
+
+var buttons = document.getElementsByTagName( 'input' ) ;
+
+for( var i in buttons ){
+	buttons[ i ].onclick = agregar ;
+}
+
+function agregar( ){
+	var valor = this.value ;
+	var div = document.getElementById( 'productos' ) ;
+	div.innerHTML += '<p>' + valor + '</p>' ;
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+

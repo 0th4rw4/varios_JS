@@ -1,0 +1,39 @@
+body{ 
+	background:#CCCCCC; 
+}
+h1{ 
+	background:#009900; 
+	border-bottom:1px dashed #006633; 
+	color: #FFFFFF; 
+	margin:0 0 4px 0; 
+	padding-bottom:3px; 
+	text-align:center; 
+}
+input{ 
+	display: block;
+	margin:3px 0 3px 6px; 
+	width:140px; 
+}
+
+#contenedor{ 
+	background:#FFFFFF; 
+	border:3px ridge #006633; 
+	height:400px; 
+	margin:0 auto; 
+	padding:0;
+	width:465px; 
+}
+
+#foto{
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+#right{ 
+	border:1px dashed #999999; 
+	float: right; 
+	margin:6px; 
+	padding:2px;
+	width:300px; 
+}

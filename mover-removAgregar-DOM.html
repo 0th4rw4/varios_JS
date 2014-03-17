@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio 4</title>
+		<link rel="stylesheet" type="text/css" media="all" href="estilos.css" />
+	</head>
+	<body>
+	<div id="pauta">
+	Al hacer click en una foto del div #original, se debe crear una copia en el div #quitados y esa imagen no debe ser clickeable nuevamente.<br />
+	A toda imagen clickeada ponerle el atributo class (que para JS se llama className) con el valor 'inactivo';
+	</div>
+	<section id="contenedor">
+		<h2>Cambiar fotos de lado</h2>
+		<div id="original">
+			<img src="img/foto1.jpg" width="100" height="56" />
+			<img src="img/foto2.jpg" width="100" height="56" />
+			<img src="img/foto3.jpg" width="100" height="56" />
+			<img src="img/foto4.jpg" width="100" height="56" />
+			<img src="img/foto5.jpg" width="100" height="56" />
+			<img src="img/foto6.jpg" width="100" height="56" />
+			<img src="img/foto7.jpg" width="100" height="56" />
+			<img src="img/foto8.jpg" width="100" height="56" />
+			<img src="img/foto9.jpg" width="100" height="56" />
+		</div>
+		<div id="quitados"></div>
+	</section>
+	<script type="text/javascript">
+	var div= document.getElementById('original')
+var imagenes = document.getElementsByTagName('img');
+
+for( var i in imagenes){
+	imagenes[i].onclick = mover;
+	
+}
+
+function mover(){
+		var mover = document.getElementById( 'quitados' ) ;
+		mover.innerHTML += "<img src='"+this.src+"'/>";
+		this.onclick='';
+		
+}
+	
+	</script>
+	</body>
+</html>

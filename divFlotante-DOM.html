@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio 4</title>
+		<style type="text/css">
+		body{background-color:darkblue;}
+		#contenedor{
+			background-color:beige;
+			border:2px dashed black;
+			width:300px;
+			height:300px;
+			margin:80px auto;}
+		li{position:relative;}
+		#globito{
+			background-color:whitesmoke;
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			/*right: 0px;*/
+			top: 3px;
+			border: 2px dashed black;
+			border-radius: 5px;}
+
+		#globito{
+			transition:All 2s ease-in;
+    		-webkit-transition:All 1s ease-out;
+  		  	-moz-transition:All 1s ease-out;
+  		  	-o-transition:All 1s ease-out;
+ 		   /*transform:  scale(0.0)  translate(150px);
+ 		   -webkit-transform:  scale(0.0)  translate(150px);
+ 		   -moz-transform:  scale(0.0)  translate(150px);
+ 		   -o-transform:  scale(0.0)  translate(150px);
+			-ms-transform:  scale(0.0)  translate(150px);*/	
+			opacity:0.0;
+			
+			right: -30px;		
+			}
+   	  #mariposa:hover #globito{
+    		/*transform:  scale(1.00)  translate(0px);
+    		-webkit-transform:  scale(1.00)  translate(0px);
+    		-moz-transform:  scale(1.00)  translate(0px);
+    		-o-transform:  scale(1.00)  translate(0px);
+    		-ms-transform:  scale(1.00)  translate(0px);*/
+    		right:40px;	
+    		opacity:1.0;
+    		}
+		</style>
+	</head>
+	<body>
+	<div id="contenedor">
+		<ul>
+			<li><a href="#" >Hola Mundo</a></li>
+			<li></li>
+			<li></li>
+			<li><a href="#" >Hola Mundo</a></li>
+			<li><a href="#" >Hola Mundo</a></li>
+			<li><a href="#" >Hola Mundo</a></li>
+			<li><a href="#" >Hola Mundo</a></li>
+			<li><a href="#" >Hola Mundo</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	var link = document.getElementsByTagName('li');
+	for (i in link){
+	link[i].onmouseover=ventana;
+	link[i].onmouseout=cerrar;
+	link[i].onmousemove=fade;
+	}
+	
+	function ventana(){
+		var globito = document.createElement('div');
+		globito.setAttribute('id','globito');
+		//globito.className='globito';
+		
+		var texto = document.createTextNode( 'hola mundo como estas yo bien.' ) ;		
+		
+		this.appendChild(globito);
+		globito.appendChild(texto) ;
+	}
+	function fade(){
+		this.setAttribute('id','mariposa');	
+	}
+	function cerrar(){
+		var globito = document.getElementById('globito');
+		this.removeChild(globito);
+		this.removeAttribute('id');
+	}
+	</script>
+	</body>
+</html>
